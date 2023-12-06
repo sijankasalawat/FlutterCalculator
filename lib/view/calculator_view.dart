@@ -43,8 +43,9 @@ class _CalculatorViewState extends State<Calculator> {
       appBar: AppBar(
         title: Text(
           'Calculator App',
-          style: GoogleFonts.getFont('Bungee Spice'),
+          style: GoogleFonts.getFont('Josefin Sans'),
         ),
+        centerTitle: true,
       ),
       body: Column(
         children: [
@@ -55,7 +56,7 @@ class _CalculatorViewState extends State<Calculator> {
                 width: double.infinity,
                 decoration: BoxDecoration(
                   border: Border.all(
-                    color: Theme.of(context).colorScheme.onBackground,
+                    color: Theme.of(context).colorScheme.primary,
                     width: 2.0,
                   ),
                 ),
@@ -106,6 +107,7 @@ class _CalculatorViewState extends State<Calculator> {
                 if (index == 0) {
                   return ButtonsView(
                     buttonText: buttons[index],
+                    buttonColor: Colors.amber,
                     buttonTapped: () {
                       setState(() {
                         userQuestion = '';
@@ -118,6 +120,7 @@ class _CalculatorViewState extends State<Calculator> {
                 else if (index == 3) {
                   return ButtonsView(
                     buttonText: buttons[index],
+                    buttonColor: Colors.blue,
                     buttonTapped: () {
                       setState(() {
                         userQuestion =
@@ -129,6 +132,7 @@ class _CalculatorViewState extends State<Calculator> {
                 // equal button
                 else if (index == buttons.length - 1) {
                   return ButtonsView(
+                    buttonColor: Colors.brown,
                     buttonText: buttons[index],
                     buttonTapped: () {
                       setState(() {
@@ -140,6 +144,7 @@ class _CalculatorViewState extends State<Calculator> {
                 // number or decimal point button
                 else if (index >= 4 && index <= 18) {
                   return ButtonsView(
+                    buttonColor: Colors.cyan,
                     buttonText: buttons[index],
                     buttonTapped: () {
                       setState(() {
@@ -156,6 +161,7 @@ class _CalculatorViewState extends State<Calculator> {
                 // rest of the buttons
                 return ButtonsView(
                   buttonText: buttons[index],
+                  buttonColor: Colors.deepPurple,
                   buttonTapped: () {
                     setState(() {
                       userQuestion += buttons[index];

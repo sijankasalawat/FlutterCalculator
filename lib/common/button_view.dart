@@ -8,6 +8,7 @@ class ButtonsView extends StatelessWidget {
     super.key,
     required this.buttonText,
     required this.buttonTapped,
+    required MaterialColor buttonColor,
   });
 
   @override
